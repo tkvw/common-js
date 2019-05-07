@@ -1,0 +1,226 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`macros default sign usage with transformations: default sign usage with transformations 1`] = `
+"
+import sign from \\"./macro\\";
+
+const url = sign({
+    url: \\"https://avatars2.githubusercontent.com/u/621098?s=460&v=4\\",
+    key: \\"4506f0f2154cb96e80f44186109a80cfe00e52659d466d24779c9aa374d5334cc98007185543510b1977384d594d75e4c7d6bf8efd694419c511711019d1c5e9\\",
+    salt: \\"e7de466ad5326e6b3838e52d6006d8b262552b857cc8a1396e0d2b604c3f8ac38cef2c0f87ffb618828902cebe33f52329735d85bb4cc30116fd1b54763d55a9\\",
+    host: \\"https://imgproxy.yourhost.com\\",
+    transformations: {
+        width: \\"600\\"
+    }
+})
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const url = \\"https://imgproxy.yourhost.com/haTAqagY3iMaptMrWRuY033QJIdUKtmNfPkHXGTSFfM/width:600/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\";
+"
+`;
+
+exports[`macros default sign usage: default sign usage 1`] = `
+"
+import sign from \\"./macro\\";
+
+const url = sign({
+    url: \\"https://avatars2.githubusercontent.com/u/621098?s=460&v=4\\",
+    key: \\"4506f0f2154cb96e80f44186109a80cfe00e52659d466d24779c9aa374d5334cc98007185543510b1977384d594d75e4c7d6bf8efd694419c511711019d1c5e9\\",
+    salt: \\"e7de466ad5326e6b3838e52d6006d8b262552b857cc8a1396e0d2b604c3f8ac38cef2c0f87ffb618828902cebe33f52329735d85bb4cc30116fd1b54763d55a9\\",
+    host: \\"https://imgproxy.yourhost.com\\",
+})
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const url = \\"https://imgproxy.yourhost.com/4_SiIL64h2z1hZFx10h4-LNuXyLFPLY-YQjyns8v3JU/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\";
+"
+`;
+
+exports[`macros default usage: default usage 1`] = `
+"
+import sign from \\"./macro\\";
+
+const url = sign({
+    url: \\"https://avatars2.githubusercontent.com/u/621098?s=460&v=4\\"
+})
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const url = \\"/insecure/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\";
+"
+`;
+
+exports[`macros no usage: no usage 1`] = `
+"
+import sign from './macro'
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+
+"
+`;
+
+exports[`macros responsive signed usage: responsive signed usage 1`] = `
+"
+import { sources } from \\"./macro\\"
+
+const responsive = sources({
+    key: \\"4506f0f2154cb96e80f44186109a80cfe00e52659d466d24779c9aa374d5334cc98007185543510b1977384d594d75e4c7d6bf8efd694419c511711019d1c5e9\\",
+    salt: \\"e7de466ad5326e6b3838e52d6006d8b262552b857cc8a1396e0d2b604c3f8ac38cef2c0f87ffb618828902cebe33f52329735d85bb4cc30116fd1b54763d55a9\\",
+    url: \\"https://avatars2.githubusercontent.com/u/621098?s=460&v=4\\"
+})
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const responsive = [{
+  media: \\"(max-width:480px)\\",
+  type: \\"image/webp\\",
+  srcSet: \\"/cJzv-617W7de8i7NkHxsbJAJkPcHBIBI8pr6Y2bkw98/ext:webp/width:640/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:768px)\\",
+  type: \\"image/webp\\",
+  srcSet: \\"/Gx1G66yvQGaA-vYZ3G8dJxwq4lfQS8l-f-i8pPJc6FQ/ext:webp/width:768/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:1024px)\\",
+  type: \\"image/webp\\",
+  srcSet: \\"/BH2TRvlC1xCDL-ZFuGQStz_pWji2wzeeeDtFAC9UTUQ/ext:webp/width:1024/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:1366px)\\",
+  type: \\"image/webp\\",
+  srcSet: \\"/C8wP51f1yD9C_WBewwMZaq-JrCy2qzT4zYDUvAAXkOg/ext:webp/width:1366/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:1600px)\\",
+  type: \\"image/webp\\",
+  srcSet: \\"/GOYqoreBHoahrc5ufsNsnxwVWUiVHkK1A_DhVxJ26hw/ext:webp/width:1600/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:1920px)\\",
+  type: \\"image/webp\\",
+  srcSet: \\"/KTKYmUiAs5iYgBxurBLXdpdMWoFxgzutORF1PG7RLOA/ext:webp/width:1920/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:480px)\\",
+  type: \\"image/jpg\\",
+  srcSet: \\"/gXVUThLwdhjIE8bdr4VsAh9g4_o69PwWTC9gRIMzC2E/ext:jpg/width:640/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:768px)\\",
+  type: \\"image/jpg\\",
+  srcSet: \\"/RHMIHq8Fs7HVJqab92DmqK9Ti8wVMCmh_wk0Wyi4LTE/ext:jpg/width:768/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:1024px)\\",
+  type: \\"image/jpg\\",
+  srcSet: \\"/PZAPCuN-IyErCWaAgGloAAfC1Hp36vbqMkUiI1oW58g/ext:jpg/width:1024/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:1366px)\\",
+  type: \\"image/jpg\\",
+  srcSet: \\"/K66Qs1uukfA-0d5jCezylyISHDpupnCWNUpGle8hOgE/ext:jpg/width:1366/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:1600px)\\",
+  type: \\"image/jpg\\",
+  srcSet: \\"/hHlCeHe_DCIi7tnCj3sdYVBrPSc4kLQMToa3JxK-dMk/ext:jpg/width:1600/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:1920px)\\",
+  type: \\"image/jpg\\",
+  srcSet: \\"/dASlfg1rbs3rHdXJSFBwQOqYugl3g0f5Wl3IrBceMf4/ext:jpg/width:1920/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}];
+"
+`;
+
+exports[`macros responsive usage: responsive usage 1`] = `
+"
+import { sources } from \\"./macro\\"
+
+const responsive = sources({
+    url: \\"https://avatars2.githubusercontent.com/u/621098?s=460&v=4\\",
+})
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const responsive = [{
+  media: \\"(max-width:480px)\\",
+  type: \\"image/webp\\",
+  srcSet: \\"/insecure/ext:webp/width:640/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:768px)\\",
+  type: \\"image/webp\\",
+  srcSet: \\"/insecure/ext:webp/width:768/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:1024px)\\",
+  type: \\"image/webp\\",
+  srcSet: \\"/insecure/ext:webp/width:1024/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:1366px)\\",
+  type: \\"image/webp\\",
+  srcSet: \\"/insecure/ext:webp/width:1366/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:1600px)\\",
+  type: \\"image/webp\\",
+  srcSet: \\"/insecure/ext:webp/width:1600/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:1920px)\\",
+  type: \\"image/webp\\",
+  srcSet: \\"/insecure/ext:webp/width:1920/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:480px)\\",
+  type: \\"image/jpg\\",
+  srcSet: \\"/insecure/ext:jpg/width:640/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:768px)\\",
+  type: \\"image/jpg\\",
+  srcSet: \\"/insecure/ext:jpg/width:768/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:1024px)\\",
+  type: \\"image/jpg\\",
+  srcSet: \\"/insecure/ext:jpg/width:1024/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:1366px)\\",
+  type: \\"image/jpg\\",
+  srcSet: \\"/insecure/ext:jpg/width:1366/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:1600px)\\",
+  type: \\"image/jpg\\",
+  srcSet: \\"/insecure/ext:jpg/width:1600/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:1920px)\\",
+  type: \\"image/jpg\\",
+  srcSet: \\"/insecure/ext:jpg/width:1920/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}];
+"
+`;
+
+exports[`macros responsive with processing usage : responsive with processing usage  1`] = `
+"
+import { sources } from \\"./macro\\"
+
+const responsive = sources({
+    url: \\"https://avatars2.githubusercontent.com/u/621098?s=460&v=4\\",
+    types: [
+        {
+            type: \\"image/jpg\\",
+            ext: \\"jpg\\"
+        }
+    ],
+    transformations: [
+        {
+            media: \\"(max-width:480px)\\",
+            width: \\"640\\"
+        },
+        {
+            media: \\"(max-width:1600px)\\",
+            resize: \\"fill:1600:::\\"
+        }
+    ]
+})
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+const responsive = [{
+  media: \\"(max-width:480px)\\",
+  type: \\"image/jpg\\",
+  srcSet: \\"/insecure/ext:jpg/width:640/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}, {
+  media: \\"(max-width:1600px)\\",
+  type: \\"image/jpg\\",
+  srcSet: \\"/insecure/ext:jpg/resize:fill:1600:::/aHR0cHM6Ly9hdmF0YXJzMi5naXRodWJ1c2VyY29udGVudC5jb20vdS82MjEwOTg_cz00NjAmdj00\\"
+}];
+"
+`;

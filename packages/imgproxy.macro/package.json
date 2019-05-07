@@ -1,0 +1,63 @@
+{
+  "name": "@tkvw/imgproxy.macro",
+  "version": "1.0.0",
+  "description": "Babel macro to generate signed imgproxy urls.",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "macro.js"
+  ],
+  "prettier": {
+    "singleQuote": false
+  },
+  "ava": {},
+  "scripts": {
+    "describe": "npm-scripts-info",
+    "build": "run-s clean && run-p build:*",
+    "build:main": "babel -d dist src",
+    "fix": "run-s fix:*",
+    "fix:prettier": "prettier \"src/**/*.ts\" --write",
+    "fix:tslint": "tslint --fix --project .",
+    "test": "run-s build test:*",
+    "test:lint": "tslint --project . && prettier \"src/**/*.ts\" --list-different",
+    "test:unit": "jest --coverage",
+    "watch": "run-s clean build:main && run-p \"build:main -- -w\" \"test:unit -- --watch\"",
+    "cov": "run-s build test:unit cov:html && opn coverage/index.html",
+    "cov:html": "nyc report --reporter=html",
+    "cov:send": "nyc report --reporter=lcov > coverage.lcov && codecov",
+    "cov:check": "nyc report && nyc check-coverage --lines 100 --functions 100 --branches 100",
+    "doc": "run-s doc:html && opn build/docs/index.html",
+    "doc:html": "typedoc src/ --exclude **/*.spec.ts --target ES6 --mode file --out build/docs",
+    "doc:json": "typedoc src/ --exclude **/*.spec.ts --target ES6 --mode file --json build/docs/typedoc.json",
+    "doc:publish": "gh-pages -m \"[ci skip] Updates\" -d build/docs",
+    "version": "standard-version",
+    "reset": "git clean -dfx && git reset --hard && npm i",
+    "clean": "trash build test",
+    "all": "run-s reset test cov:check doc:html",
+    "prepare-release": "run-s all version doc:publish"
+  },
+  "keywords": [
+    "imgproxy",
+    "babel",
+    "babel-macros",
+    "babel-plugin-macros"
+  ],
+  "author": "Dennie de Lange",
+  "jest": {
+    "testRegex": ".*.spec.js$"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "ava": "^1.4.1",
+    "babel-plugin-tester": "^6.1.0",
+    "jest": "^24.8.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.17.0"
+  },
+  "dependencies": {
+    "babel-plugin-macros": "^2.5.1"
+  }
+}
