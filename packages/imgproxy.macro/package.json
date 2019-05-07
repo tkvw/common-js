@@ -1,6 +1,6 @@
 {
   "name": "@tkvw/imgproxy.macro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Babel macro to generate signed imgproxy urls.",
   "main": "dist/macro.js",
   "files": [
